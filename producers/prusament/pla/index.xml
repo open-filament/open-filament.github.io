@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Prusament - PLA on Open-Filament</title>
+    <link>https://open-filament.github.io/producers/prusament/pla/</link>
+    <description>Recent content in Prusament - PLA on Open-Filament</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://open-filament.github.io/producers/prusament/pla/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Galaxy Silver</title>
+      <link>https://open-filament.github.io/producers/prusament/pla/galaxy-silver/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pla/galaxy-silver/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lipstick Red</title>
+      <link>https://open-filament.github.io/producers/prusament/pla/lipstick-red/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pla/lipstick-red/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prusa Galaxy Black</title>
+      <link>https://open-filament.github.io/producers/prusament/pla/prusa-galaxy-black/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pla/prusa-galaxy-black/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
