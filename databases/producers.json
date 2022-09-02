@@ -1,0 +1,161 @@
+[
+    {
+        "name": "Prusament",
+        "materials": [
+            {
+                "name": "PETG",
+                "filaments": [
+                    {
+                        "name": "Jet Black",
+                        "id": "b3436596-7504-4bfe-8dc3-6b0d4090651a"
+                    },
+                    {
+                        "name": "Prusa Orange",
+                        "id": "371908dd-8bca-41ff-94c7-582164b01b4f"
+                    },
+                    {
+                        "name": "Galaxy Black",
+                        "id": "e1ba04da-246d-48e9-b0bd-5c91c0c2927c"
+                    },
+                    {
+                        "name": "Ultramarine Blue Transparent",
+                        "id": "ffa22b63-b26a-4fa2-85d6-d59cd5aeec4d"
+                    },
+                    {
+                        "name": "Clear",
+                        "id": "616ebf8c-e7cc-4018-a2d0-235438687704"
+                    },
+                    {
+                        "name": "Signal White",
+                        "id": "972165b1-a091-4bae-b242-f3767c95a2de"
+                    },
+                    {
+                        "name": "Urban Grey",
+                        "id": "2ed275b9-7fa9-4f7a-a7ea-ba0f9f2425c2"
+                    },
+                    {
+                        "name": "Anthracite Grey",
+                        "id": "423f93d8-8d6e-405c-9d9b-a8d36bd63473"
+                    },
+                    {
+                        "name": "Mango Yellow",
+                        "id": "8c41d655-26a5-45a1-80b0-a0a08e767248"
+                    },
+                    {
+                        "name": "Yellow Gold",
+                        "id": "9655a23f-0eb1-4830-ad6f-1792376dc22f"
+                    },
+                    {
+                        "name": "Terracotta Light",
+                        "id": "e10aee75-fc8b-4e4d-b87e-7b26890611e9"
+                    },
+                    {
+                        "name": "Prusa Orange Transparent",
+                        "id": "dcf8d242-7c8d-49b3-8ad9-328b5ef2fee3"
+                    },
+                    {
+                        "name": "Lipstick Red",
+                        "id": "fc1e044e-b8ba-4a25-a4d9-0e332dae6025"
+                    },
+                    {
+                        "name": "Carmine Red Transparent",
+                        "id": "443454af-54ae-4152-aaf6-b920640e6d75"
+                    },
+                    {
+                        "name": "Chalky Blue",
+                        "id": "0e78c651-994f-4fa0-9a83-2653d617761f"
+                    },
+                    {
+                        "name": "Ocean Blue",
+                        "id": "6c0ca0a3-312d-4071-98b8-1f50627cd5ad"
+                    },
+                    {
+                        "name": "Pistachio Green",
+                        "id": "0af4cbcf-1863-4c61-a1e2-078ab48adeca"
+                    },
+                    {
+                        "name": "Neon Green Transparent",
+                        "id": "8b9870db-9c4a-4c28-97cb-399018c85849"
+                    },
+                    {
+                        "name": "Jungle Green",
+                        "id": "5676477e-4fa6-4a50-8aad-8f0acd5feca0"
+                    }
+                ]
+            },
+            {
+                "name": "ASA",
+                "filaments": [
+                    {
+                        "name": "Prusa Orange",
+                        "id": "72348752-9247-4b35-a9bd-383f3c94ff82"
+                    },
+                    {
+                        "name": "Prusa Galaxy Black",
+                        "id": "f5d14237-aa7c-4239-9b4e-66da3ccbc242"
+                    },
+                    {
+                        "name": "Jet Black",
+                        "id": "7db266ff-ff75-4206-9484-6e0a788e2fb0"
+                    },
+                    {
+                        "name": "Natural",
+                        "id": "b07a4c34-d762-4fd7-9441-cf5741dc2380"
+                    },
+                    {
+                        "name": "Sapphire Blue",
+                        "id": "5874edad-e0a1-41db-a644-8bd99792871c"
+                    },
+                    {
+                        "name": "Lipstick Red",
+                        "id": "cab8dc1f-b19f-4c24-8e15-a89618212310"
+                    },
+                    {
+                        "name": "Signal White",
+                        "id": "b858315e-7ef2-46db-84ce-e749d6c8e030"
+                    }
+                ]
+            },
+            {
+                "name": "PLA",
+                "filaments": [
+                    {
+                        "name": "Galaxy Silver",
+                        "id": "2d92268c-d6a9-4e77-b819-2d8998fd138f"
+                    },
+                    {
+                        "name": "Prusa Galaxy Black",
+                        "id": "3aded263-109c-413d-913d-970c2168db59"
+                    },
+                    {
+                        "name": "Lipstick Red",
+                        "id": "63aac398-f8f4-421d-997e-58843d03aac8"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "eSUN",
+        "materials": [
+            {
+                "name": "PLA+",
+                "filaments": [
+                    {
+                        "name": "PLAPlus Filament",
+                        "id": "ad0f4642-98a5-4448-b1a9-7404d3e39cf3"
+                    }
+                ]
+            },
+            {
+                "name": "PETG",
+                "filaments": [
+                    {
+                        "name": "3D Filament - PETG",
+                        "id": "65ec0de9-f58e-4a80-ab27-c9397b398bc7"
+                    }
+                ]
+            }
+        ]
+    }
+]

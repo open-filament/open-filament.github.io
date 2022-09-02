@@ -1,0 +1,26 @@
+{{ define "title" }}
+<!-- This will override the default value set in baseof.html; i.e., "{{.Site.Title}}" in the original example-->
+{{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+{{ define "main" }}
+<section class="section">
+    <div class="container">
+        <h1 class="title">{{ .Title }}</h1>
+        <h3 class="subtitle">{{ .Params.material }} by {{.Params.producer}}</h3>
+
+        <figure class="image is-128x128">
+            <img src="../{{ .Params.id }}.png">
+        </figure>
+
+        <a href="../{{ .Params.id }}.stl" class="button">STL-Download</a>
+
+        {{ .Content }}
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <img src="../{{ .Params.id }}.qrcode.png">
+        {{ .Params.id }}
+    </div>
+</section>
+{{ end }}

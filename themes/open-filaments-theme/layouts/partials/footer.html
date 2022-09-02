@@ -1,0 +1,42 @@
+<section class="section">
+    <div class="container">
+
+
+
+        <div class="columns">
+            <div class="column">
+                Sections
+                <ul class="sub-menu">
+                    {{ range .Site.Sections }}
+                    <li>
+                        <a href="{{ .URL }}">{{ .Name }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+            <div class="column">
+                <!-- AllPages
+                <ul class="sub-menu">
+                    {{ range .Site.AllPages }}
+                    <li>
+                        <a href="{{ .URL }}">{{ .Name }}</a>
+                    </li>
+                    {{ end }}
+                </ul> -->
+            </div>
+            <div class="column">
+                <!-- Taxonomies
+                <ul class="sub-menu">
+                    {{ range .Site.Taxonomies }}
+                    <li>
+                        <a href="{{ .URL }}">{{ .Name }}</a>
+                    </li>
+                    {{ end }}
+                </ul> -->
+            </div>
+            <div class="column">
+                <!-- Fourth column -->
+            </div>
+        </div>
+    </div>
+</section>

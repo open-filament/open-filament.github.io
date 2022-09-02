@@ -1,0 +1,8 @@
+<div class="container">
+    {{- partial "navbar.html" . -}}
+</div>
+{{ if eq (relURL .URL) ("/" | safeHTML) }}
+<!-- skip generation of breadcumb on homepage -->
+{{ else }}
+{{- partial "breadcrumb.html" . -}}
+{{ end }}

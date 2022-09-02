@@ -1,0 +1,26 @@
+{{ define "main" }}
+<section class="section has-background-grey-light">
+    <div class="container">
+        <h1>{{.Title}}</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Title</td>
+                    <td>Info</td>
+                    <td>Link</td>
+                </tr>
+            </thead>
+            <tbody>
+
+                {{ range .Pages }}
+                <tr>
+                    <td>{{ .Title }}</td>
+                    <td>Info</td>
+                    <td><a href="{{ .Permalink}}">Open</a></td>
+                </tr>
+                {{ end }}
+            </tbody>
+        </table>
+    </div>
+</section>
+{{ end }}

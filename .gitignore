@@ -1,0 +1,5 @@
+venv
+tmp
+content/producers
+__pycache__
+.hugo_build.lock

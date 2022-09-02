@@ -1,0 +1,35 @@
+producer:
+  name: Prusament
+  materials:
+    PETG:
+      - Jet Black
+      - Prusa Orange
+      - Galaxy Black
+      - Ultramarine Blue Transparent
+      - Clear
+      - Signal White
+      - Urban Grey
+      - Anthracite Grey
+      - Mango Yellow
+      - Yellow Gold
+      - Terracotta Light
+      - Prusa Orange Transparent
+      - Lipstick Red
+      - Carmine Red Transparent
+      - Chalky Blue
+      - Ocean Blue
+      - Pistachio Green
+      - Neon Green Transparent
+      - Jungle Green
+    ASA:
+      - Prusa Orange
+      - Prusa Galaxy Black
+      - Jet Black
+      - Natural
+      - Sapphire Blue
+      - Lipstick Red
+      - Signal White
+    PLA:
+      - Galaxy Silver
+      - Prusa Galaxy Black
+      - Lipstick Red

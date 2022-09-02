@@ -1,0 +1,41 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="{{.Site.BaseURL}}">
+            <img src="{{.Site.Params.logo}}" width="28" height="28">&nbsp;{{.Site.Title}}
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item">
+                Home
+            </a>
+
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                    Producers
+                </a>
+
+                <div class="navbar-dropdown">
+                    {{ range $.Site.Data }}
+                    <a class="navbar-item" href="/producers/{{lower .producer.name }}">
+                        {{ .producer.name }}
+                    </a>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar-end">
+            <a class="navbar-item">
+                GitHub
+            </a>
+        </div>
+    </div>
+</nav>
