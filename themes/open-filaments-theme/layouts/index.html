@@ -1,38 +1,43 @@
 {{ define "main" }}
-<section class="hero">
-    <div class="hero-body">
-        <p class="title">
-            {{.Title}}
-        </p>
-        <p class="subtitle">
-            {{.Site.Params.description}}
-        </p>
+<section class="hero has-background-white-ter">
+    <div class="container">
+        <div class="hero-body">
+            <p class="title">
+                {{.Title}}
+            </p>
+            <p class="subtitle">
+                {{.Site.Params.description}}
+            </p>
+        </div>
     </div>
 </section>
 
 
 <section class="section">
-    <h1 class="title">Producers</h1>
-    <h2 class="subtitle">
-        See a list of producer's.
-    </h2>
-    {{ range (.Site.GetPage "section" "producers").Sections }}
-    <a href="{{.Permalink}}" class="button">{{.Title}}</a>
+    <div class="container">
 
-    {{ end }}
+        <h1 class="title">Producers</h1>
+        <h2 class="subtitle">
+            See a list of producer's.
+        </h2>
+        {{ range (.Site.GetPage "section" "producers").Sections }}
+        <a href="{{.Permalink}}" class="button">{{.Title}}</a>
 
+        {{ end }}
+    </div>
 </section>
 
 <section class="section">
-    <h1 class="title">How-To's</h1>
-    <h2 class="subtitle">
-        You want to learn how it work's or how to contribute. Follow one of the links below.
-    </h2>
-    {{ range (.Site.GetPage "section" "howtos").Pages }}
-    <a href="{{.Permalink}}" class="button">{{.Title}}</a>
+    <div class="container">
+        <h1 class="title">How-To's</h1>
+        <h2 class="subtitle">
+            You want to learn how it work's or how to contribute. Follow one of the links below.
+        </h2>
+        {{ range (.Site.GetPage "section" "howtos").Pages }}
+        <a href="{{.Permalink}}" class="button">{{.Title}}</a>
 
-    {{ end }}
-
+        {{ end }}
+    </div>
 </section>
 
 {{ end }}

@@ -19,8 +19,8 @@
 </section>
 <section class="section">
     <div class="container">
-        <img src="../{{ .Params.id }}.qrcode.png">
-        {{ .Params.id }}
+        <img src="{{ .Params.id }}.qrcode.png">
+        <a href="{{ .Site.BaseURL }}f/{{ .Params.id }}">{{ .Site.BaseURL }}f/{{ .Params.id }}</a> Permalink (short)
     </div>
 </section>
 {{ end }}
