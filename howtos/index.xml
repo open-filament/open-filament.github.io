@@ -12,7 +12,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://open-filament.github.io/howtos/contribute/</guid>
-      <description>When you want to contribute, visit GitHub first.</description>
+      <description>When you want to contribute, visit GitHub first.
+New producers Each producer will be saved under data/ folder as YAML file. Feel free to create a pull request on GitHub to extend the number of producers.
+See example.yml
+producer: name: example producer materials: PLA+: - PLAPlus Filament PETG: - 3D Filament - PETG </description>
     </item>
     
     <item>

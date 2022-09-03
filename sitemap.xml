@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://open-filament.github.io/</loc>
+    <priority>0</priority>
+  </url><url>
     <loc>https://open-filament.github.io/producers/esun/petg/3d-filament-petg/</loc>
   </url><url>
     <loc>https://open-filament.github.io/producers/prusament/petg/anthracite-grey/</loc>
@@ -103,8 +106,6 @@
     <loc>https://open-filament.github.io/producers/prusament/petg/neon-green-transparent/</loc>
   </url><url>
     <loc>https://open-filament.github.io/producers/prusament/petg/ocean-blue/</loc>
-  </url><url>
-    <loc>https://open-filament.github.io/</loc>
   </url><url>
     <loc>https://open-filament.github.io/producers/prusament/petg/pistachio-green/</loc>
   </url><url>
