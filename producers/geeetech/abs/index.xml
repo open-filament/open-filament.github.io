@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Geeetech - ABS on Open-Filament</title>
+    <link>https://open-filament.github.io/producers/geeetech/abs/</link>
+    <description>Recent content in Geeetech - ABS on Open-Filament</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://open-filament.github.io/producers/geeetech/abs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Geeetech ABS</title>
+      <link>https://open-filament.github.io/producers/geeetech/abs/geeetech-abs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/geeetech/abs/geeetech-abs/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
