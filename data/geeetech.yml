@@ -1,0 +1,29 @@
+producer:
+  name: Geeetech
+  materials:
+    PETG:
+      - Geeetech PETG
+    ABS:
+      - Geeetech ABS
+    PLA:
+      - Geeetech PLA red
+      - Geeetech PLA black
+      - Geeetech PLA white
+      - Geeetech PLA blue
+      - Geeetech PLA green
+      - Geeetech PLA grey
+      - Geeetech PLA yellow
+      - Geeetech PLA transparent
+      - Geeetech PLA water blue
+      - Geeetech PLA apple green
+      - Geeetech PLA marble color
+      - Geeetech PLA silver
+      - Geeetech PLA brown
+      - Geeetech PLA orange
+      - Geeetech PLA purple
+      - Geeetech PLA pink
+      - Geeetech PLA sand gold
+      - Geeetech PLA gradient color
+      - Geeetech PLA wood
+      - Geeetech PLA sparkly blue
+      - Geeetech PLA sparkly purple

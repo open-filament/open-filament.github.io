@@ -1,5 +1,117 @@
 [
     {
+        "name": "Geeetech",
+        "materials": [
+            {
+                "name": "PETG",
+                "filaments": [
+                    {
+                        "name": "Geeetech PETG",
+                        "id": "bae03c48-b99b-4a86-87ab-374f7f068802"
+                    }
+                ]
+            },
+            {
+                "name": "ABS",
+                "filaments": [
+                    {
+                        "name": "Geeetech ABS",
+                        "id": "403cf43c-a9e7-4d26-b81d-f7d694af9bec"
+                    }
+                ]
+            },
+            {
+                "name": "PLA",
+                "filaments": [
+                    {
+                        "name": "Geeetech PLA red",
+                        "id": "c6a0e4d1-6a4e-4b08-a733-084c1a75691f"
+                    },
+                    {
+                        "name": "Geeetech PLA black",
+                        "id": "4affcfeb-1ad2-4a26-8f1b-ba5defea91fe"
+                    },
+                    {
+                        "name": "Geeetech PLA white",
+                        "id": "6281d4cf-bfce-4682-932f-c29a006003ed"
+                    },
+                    {
+                        "name": "Geeetech PLA blue",
+                        "id": "59dd5ec6-1294-4db0-8ea8-09b9c1e82977"
+                    },
+                    {
+                        "name": "Geeetech PLA green",
+                        "id": "1ed2acd5-4ef5-467c-922a-9e4ee86ff037"
+                    },
+                    {
+                        "name": "Geeetech PLA grey",
+                        "id": "291ab014-e45f-4f5d-b985-1feb60f41b93"
+                    },
+                    {
+                        "name": "Geeetech PLA yellow",
+                        "id": "ce5c7a12-7416-4648-8aae-fb4a5b595aec"
+                    },
+                    {
+                        "name": "Geeetech PLA transparent",
+                        "id": "a30953f9-cb61-460f-8f97-3a81c15aadef"
+                    },
+                    {
+                        "name": "Geeetech PLA water blue",
+                        "id": "950ca475-0506-4df0-abf7-9e62aa243fff"
+                    },
+                    {
+                        "name": "Geeetech PLA apple green",
+                        "id": "f25c3a93-434d-4b2d-b73e-575f66c08a66"
+                    },
+                    {
+                        "name": "Geeetech PLA marble color",
+                        "id": "d52a3825-112a-4467-b65e-e37bf7b93f7a"
+                    },
+                    {
+                        "name": "Geeetech PLA silver",
+                        "id": "a074fe50-9558-4f6d-b735-4ce17a73ed6c"
+                    },
+                    {
+                        "name": "Geeetech PLA brown",
+                        "id": "4323642c-467c-4a98-86dd-5a7c926979a2"
+                    },
+                    {
+                        "name": "Geeetech PLA orange",
+                        "id": "16fdbaaf-1514-4a9d-9261-83608db29fef"
+                    },
+                    {
+                        "name": "Geeetech PLA purple",
+                        "id": "21169e8a-8878-4038-b04e-9e6131440ea7"
+                    },
+                    {
+                        "name": "Geeetech PLA pink",
+                        "id": "b973d40a-5674-4f5e-ae13-17f53324f74a"
+                    },
+                    {
+                        "name": "Geeetech PLA sand gold",
+                        "id": "30522d8d-0683-4dca-9883-9d03cd70a3cf"
+                    },
+                    {
+                        "name": "Geeetech PLA gradient color",
+                        "id": "06c5da8c-e506-4b3b-842e-790065008396"
+                    },
+                    {
+                        "name": "Geeetech PLA wood",
+                        "id": "74cdcef6-8e5a-4c84-9935-f74ff1bdb8c3"
+                    },
+                    {
+                        "name": "Geeetech PLA sparkly blue",
+                        "id": "3b2fbc0e-e8c5-4bd5-8aa8-069d3530b499"
+                    },
+                    {
+                        "name": "Geeetech PLA sparkly purple",
+                        "id": "e26faa4c-bdee-4b5e-bf4c-5fec877009cf"
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "name": "Prusament",
         "materials": [
             {
@@ -7,59 +119,59 @@
                 "filaments": [
                     {
                         "name": "Jet Black",
-                        "id": "b3436596-7504-4bfe-8dc3-6b0d4090651a"
+                        "id": "5af4ba7f-2aea-46bf-92a8-c99aa667a2c8"
                     },
                     {
                         "name": "Prusa Orange",
-                        "id": "371908dd-8bca-41ff-94c7-582164b01b4f"
+                        "id": "eb22989f-b994-44dc-9042-1d2f006ff2da"
                     },
                     {
                         "name": "Galaxy Black",
-                        "id": "e1ba04da-246d-48e9-b0bd-5c91c0c2927c"
+                        "id": "59003a40-9343-4904-b6db-30d7d1d43f9e"
                     },
                     {
                         "name": "Ultramarine Blue Transparent",
-                        "id": "ffa22b63-b26a-4fa2-85d6-d59cd5aeec4d"
+                        "id": "1f3858f7-af1f-438d-a74c-be9b44033b0e"
                     },
                     {
                         "name": "Clear",
-                        "id": "616ebf8c-e7cc-4018-a2d0-235438687704"
+                        "id": "ffdd7140-a303-48fb-8cf3-bcf232eb2aad"
                     },
                     {
                         "name": "Signal White",
-                        "id": "972165b1-a091-4bae-b242-f3767c95a2de"
+                        "id": "d5906f78-0c33-46ac-896f-04f64da2b194"
                     },
                     {
                         "name": "Urban Grey",
-                        "id": "2ed275b9-7fa9-4f7a-a7ea-ba0f9f2425c2"
+                        "id": "dbdf6eae-e05a-46ab-8389-8bf4b8da71a0"
                     },
                     {
                         "name": "Anthracite Grey",
-                        "id": "423f93d8-8d6e-405c-9d9b-a8d36bd63473"
+                        "id": "15fc0c11-f420-4f66-b587-704ac9e5b0a7"
                     },
                     {
                         "name": "Mango Yellow",
-                        "id": "8c41d655-26a5-45a1-80b0-a0a08e767248"
+                        "id": "93dec643-4a46-47f5-91de-bf962de41387"
                     },
                     {
                         "name": "Yellow Gold",
-                        "id": "9655a23f-0eb1-4830-ad6f-1792376dc22f"
+                        "id": "c9cbd576-36ed-4715-911e-e2798d9769a9"
                     },
                     {
                         "name": "Terracotta Light",
-                        "id": "e10aee75-fc8b-4e4d-b87e-7b26890611e9"
+                        "id": "57d30651-ad78-465b-863c-9ff921fc850c"
                     },
                     {
                         "name": "Prusa Orange Transparent",
-                        "id": "dcf8d242-7c8d-49b3-8ad9-328b5ef2fee3"
+                        "id": "71f0a119-7f18-48e3-a198-97fb16212ea2"
                     },
                     {
                         "name": "Lipstick Red",
-                        "id": "fc1e044e-b8ba-4a25-a4d9-0e332dae6025"
+                        "id": "fc5dda54-a06e-44b6-84f0-1ec33fce6d87"
                     },
                     {
                         "name": "Carmine Red Transparent",
-                        "id": "443454af-54ae-4152-aaf6-b920640e6d75"
+                        "id": "0b171586-b6ad-48ff-b4d0-a06edd5f41e8"
                     },
                     {
                         "name": "Chalky Blue",
@@ -67,19 +179,19 @@
                     },
                     {
                         "name": "Ocean Blue",
-                        "id": "6c0ca0a3-312d-4071-98b8-1f50627cd5ad"
+                        "id": "5c17dc5d-bd77-46d9-89f1-344f951a81a0"
                     },
                     {
                         "name": "Pistachio Green",
-                        "id": "0af4cbcf-1863-4c61-a1e2-078ab48adeca"
+                        "id": "c439eaa8-d305-4a66-8f3f-3446e272bacf"
                     },
                     {
                         "name": "Neon Green Transparent",
-                        "id": "8b9870db-9c4a-4c28-97cb-399018c85849"
+                        "id": "2075960e-d178-4e41-bd52-836cca5eaa9a"
                     },
                     {
                         "name": "Jungle Green",
-                        "id": "5676477e-4fa6-4a50-8aad-8f0acd5feca0"
+                        "id": "c4d838fb-deed-437b-90c4-3b7adc551d45"
                     }
                 ]
             },
@@ -88,31 +200,31 @@
                 "filaments": [
                     {
                         "name": "Prusa Orange",
-                        "id": "72348752-9247-4b35-a9bd-383f3c94ff82"
+                        "id": "f72e6c59-2b1a-4aba-95cb-c58f37fac4d4"
                     },
                     {
                         "name": "Prusa Galaxy Black",
-                        "id": "f5d14237-aa7c-4239-9b4e-66da3ccbc242"
+                        "id": "c10b6bdb-dc71-470f-9846-c73aefb0a71d"
                     },
                     {
                         "name": "Jet Black",
-                        "id": "7db266ff-ff75-4206-9484-6e0a788e2fb0"
+                        "id": "9b276f68-b0c7-497e-8d56-f4ca29c42ed5"
                     },
                     {
                         "name": "Natural",
-                        "id": "b07a4c34-d762-4fd7-9441-cf5741dc2380"
+                        "id": "45f7b438-88b7-4b87-9dde-b8e0b25861ba"
                     },
                     {
                         "name": "Sapphire Blue",
-                        "id": "5874edad-e0a1-41db-a644-8bd99792871c"
+                        "id": "4f33344c-e87b-4deb-b646-14badbccabf2"
                     },
                     {
                         "name": "Lipstick Red",
-                        "id": "cab8dc1f-b19f-4c24-8e15-a89618212310"
+                        "id": "5039e0ec-a9d8-4482-a7e6-a85d94e24262"
                     },
                     {
                         "name": "Signal White",
-                        "id": "b858315e-7ef2-46db-84ce-e749d6c8e030"
+                        "id": "ac4a2583-85bb-4420-a945-408406c5edac"
                     }
                 ]
             },
@@ -121,15 +233,15 @@
                 "filaments": [
                     {
                         "name": "Galaxy Silver",
-                        "id": "2d92268c-d6a9-4e77-b819-2d8998fd138f"
+                        "id": "8303ad3a-c5f1-4cd7-a0a2-453ceecc55ed"
                     },
                     {
                         "name": "Prusa Galaxy Black",
-                        "id": "3aded263-109c-413d-913d-970c2168db59"
+                        "id": "b9eeb7e2-74ab-4cac-80d1-b16f8e72d8be"
                     },
                     {
                         "name": "Lipstick Red",
-                        "id": "63aac398-f8f4-421d-997e-58843d03aac8"
+                        "id": "7a630a40-02fb-43b1-8b97-5dd59bf46f95"
                     }
                 ]
             }
@@ -143,7 +255,7 @@
                 "filaments": [
                     {
                         "name": "PLAPlus Filament",
-                        "id": "ad0f4642-98a5-4448-b1a9-7404d3e39cf3"
+                        "id": "0540cf94-87e3-41bb-8ee9-919c1c1c731c"
                     }
                 ]
             },
@@ -152,7 +264,7 @@
                 "filaments": [
                     {
                         "name": "3D Filament - PETG",
-                        "id": "65ec0de9-f58e-4a80-ab27-c9397b398bc7"
+                        "id": "2d5c5026-6b48-457d-ac0d-241b1ef1ba11"
                     }
                 ]
             }

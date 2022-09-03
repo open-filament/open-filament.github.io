@@ -11,6 +11,7 @@ def build_content():
     cb.load_producers_data(DATABASE_DIR + "producers.json")
     cb.load_producer(DATA_DIR + "prusament.yml")
     cb.load_producer(DATA_DIR + "esun.yml")
+    cb.load_producer(DATA_DIR + "geeetech.yml")
 
     cb.generate_uuids()
     cb.generate_content(CONTENT_DIR_PRODUCERS)
