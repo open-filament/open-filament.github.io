@@ -5,16 +5,34 @@
 {{ define "main" }}
 <section class="section">
     <div class="container">
-        <h1 class="title">{{ .Title }}</h1>
-        <h3 class="subtitle">{{ .Params.material }} by {{.Params.producer}}</h3>
+        <div class="content">
 
-        <figure class="image is-128x128">
-            <img src="{{ .Params.id }}.png">
-        </figure>
+            <h1 class="title">{{ .Title }}</h1>
+            <h3 class="subtitle">{{ .Params.material }} by {{.Params.producer}}</h3>
 
-        <a href="{{ .Params.id }}.stl" class="button">STL-Download</a>
+            <div class="columns">
+                <div class="column">
+                    <figure class="image">
+                        <img src="{{ .Params.id }}.png">
+                    </figure>
+                </div>
+                <div class="column">
+                    <p>
+                        <a href="{{ .Params.id }}.stl" class="button">STL-Download</a>
+                    </p>
 
-        {{ .Content }}
+                    <p>Producer: {{.Params.producer}}</p>
+                    <p>Material: {{.Params.material}}</p>
+                    <p>Name: {{.Title}}</p>
+                </div>
+            </div>
+
+
+
+
+
+            {{ .Content }}
+        </div>
     </div>
 </section>
 <section class="section">
