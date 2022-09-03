@@ -74,6 +74,14 @@ def ensure_directory(path: str):
         os.mkdir(path)
 
 
+def clear_name(filename: str) -> str:
+    filename = filename.lower()
+    filename = filename.replace(" ", "-")
+    while "--" in filename:
+        filename = filename.replace("--", "-")
+    return filename
+
+
 class ContentBuilder:
 
     producers: list[Producer]
@@ -124,7 +132,7 @@ class ContentBuilder:
 
     def __generate_procuder_content(self, producers_basepath: str, producer: Producer):
         producer_path = os.path.join(
-            producers_basepath, producer.name)
+            producers_basepath, clear_name(producer.name))
         ensure_directory(producer_path)
 
         self.__generate_producer_index(producer, producer_path)
@@ -135,7 +143,7 @@ class ContentBuilder:
 
     def __generate_material_content(self, producer: Producer, producer_path: str, material: Material):
         material_path = os.path.join(
-            producer_path, material.name)
+            producer_path, clear_name(material.name))
         ensure_directory(material_path)
 
         self.__generate_material_index(
@@ -146,13 +154,15 @@ class ContentBuilder:
                 producer, material, material_path, filament)
 
     def __generate_filament_content(self, producer: Producer, material: Material, material_path: str, filament: Filament):
-        filament_path = os.path.join(material_path, f"{filament.name}.md")
+        filament_path = os.path.join(
+            material_path, f"{clear_name(filament.name)}.md")
         self.__write_filament_file(
             filament_path, producer, material, filament)
 
         qrcg = QrCodeGenerator()
         url_to_page = "https://open-smartwatch.github.io/resources/firmware/#lang_stw_start-was-not-declared-in-this-scope"
-        filament_exportdir = os.path.join(material_path, filament.name)
+        filament_exportdir = os.path.join(
+            material_path, clear_name(filament.name))
         qrcg.from_url_to_stl(url_to_page, filament_exportdir, filament.id)
 
     def __generate_producer_index(self, producer: Producer, producer_path: str):
