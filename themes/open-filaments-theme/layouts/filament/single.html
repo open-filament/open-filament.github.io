@@ -9,10 +9,10 @@
         <h3 class="subtitle">{{ .Params.material }} by {{.Params.producer}}</h3>
 
         <figure class="image is-128x128">
-            <img src="../{{ .Params.id }}.png">
+            <img src="{{ .Params.id }}.png">
         </figure>
 
-        <a href="../{{ .Params.id }}.stl" class="button">STL-Download</a>
+        <a href="{{ .Params.id }}.stl" class="button">STL-Download</a>
 
         {{ .Content }}
     </div>
