@@ -1,4 +1,7 @@
 from __future__ import annotations
+from turtle import update
+from src.qrcode.qrcode_generator import QrCodeGenerator
+import multiprocessing as mp
 import dataclasses
 from subprocess import call
 from uuid import uuid4
@@ -7,15 +10,24 @@ import os
 from dataclasses import dataclass
 from typing import Optional
 import yaml
+import coloredlogs
+import logging
 
-import multiprocessing as mp
-from src.qrcode.qrcode_generator import QrCodeGenerator
+# Create a logger object.
+logger = logging.getLogger(__name__)
+
+# By default the install() function installs a handler on the root logger,
+# this means that log messages from your code and log messages from the
+# libraries that you use will all show up on the terminal.
+coloredlogs.install(level='DEBUG', logger=logger)
 
 
 class EnhancedJSONEncoder(json.JSONEncoder):
     def default(self, o):
         if dataclasses.is_dataclass(o):
             return dataclasses.asdict(o)
+        if type(o) is list:
+            return [self.default(item) for item in o]
         return super().default(o)
 
 
@@ -28,6 +40,11 @@ class Filament:
     def from_json(d: dict) -> Filament:
         return Filament(d['name'], d['id'])
 
+    def update(self, updated_filament: Filament) -> None:
+        self.name = updated_filament.name
+        if updated_filament.id is not None:
+            self.id = updated_filament.id
+
 
 @dataclass
 class Material:
@@ -38,6 +55,20 @@ class Material:
     def from_json(d: dict) -> Material:
         return Material(d['name'], [Filament.from_json(m) for m in d['filaments']])
 
+    def __filament_in_list(self, filamentname: str) -> bool:
+        return any(filament.name == filamentname for filament in self.filaments)
+
+    def __filament_index(self, filamentname: str) -> int:
+        return next((i for i, filament in enumerate(self.filaments) if filament.name == filamentname), -1)
+
+    def update(self, updated_material: Material) -> None:
+        for updated_filament in updated_material.filaments:
+            if not self.__filament_in_list(updated_filament.name):
+                self.filaments.append(updated_filament)
+            else:
+                index = self.__filament_index(updated_filament.name)
+                self.filaments[index].update(updated_filament)
+
 
 @dataclass
 class Producer:
@@ -47,6 +78,21 @@ class Producer:
     @staticmethod
     def from_json(d: dict) -> Producer:
         return Producer(d['name'], [Material.from_json(m) for m in d['materials']])
+
+    def __material_in_list(self, materialname: str) -> bool:
+        return any(material.name == materialname for material in self.materials)
+
+    def __material_index(self, materialname: str) -> int:
+        return next((i for i, material in enumerate(self.materials) if material.name == materialname), -1)
+
+    def update(self, updated_producer: Producer) -> None:
+        logger.info("Update producer %s", updated_producer)
+        for updated_material in updated_producer.materials:
+            if not self.__material_in_list(updated_material.name):
+                self.materials.append(updated_material)
+            else:
+                index = self.__material_index(updated_material.name)
+                self.materials[index].update(updated_material)
 
 
 def producer_from_yaml(filepath: str):
@@ -141,17 +187,27 @@ class ContentBuilder:
     def __producer_in_list(self, producername: str) -> bool:
         return any(producer.name == producername for producer in self.producers)
 
+    def __producer_index(self, producername: str) -> int:
+        return next((i for i, item in enumerate(self.producers) if item.name == producername), -1)
+
     def load_producer(self, filepath: str) -> None:
         """load producer from YAML file"""
+        logger.info("Load producer %s", filepath)
         producer = producer_from_yaml(filepath)
+        logger.debug(producer)
+        logger.info(json.dumps([producer], cls=EnhancedJSONEncoder))
         if producer is not None:
             if not self.__producer_in_list(producer.name):
                 self.producers.append(producer)
+            else:
+                index = self.__producer_index(producer.name)
+                self.producers[index].update(producer)
 
     def save_producers_data(self, filepath: str):
         """save producers to JSON file"""
         jsonstring = json.dumps(
             self.producers, cls=EnhancedJSONEncoder, indent=4)
+        logger.debug(jsonstring)
         with open(filepath, "w+", encoding="utf-8") as stream:
             stream.write(jsonstring)
 
@@ -160,12 +216,13 @@ class ContentBuilder:
         with open(filepath, "r", encoding="utf-8") as stream:
             obj = json.load(stream)  # , object_hook=list[Producer.from_json]
             self.producers = [Producer.from_json(d) for d in obj]
-            print(self.producers)
+            # print(self.producers)
 
     def generate_uuids(self):
         for producer in self.producers:
             for material in producer.materials:
                 for filament in material.filaments:
+                    print(filament.id)
                     if filament.id is None:
                         filament.id = str(uuid4())
 
