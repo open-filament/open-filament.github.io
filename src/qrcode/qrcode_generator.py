@@ -7,6 +7,7 @@ from PIL import Image
 import os
 
 OVERWRITE_STL = False
+OVERWRITE_PNG = False
 SCALE = 1.0
 HEIGHT = 1.1
 
@@ -79,7 +80,7 @@ class QrCodeGenerator:
                  for j, col in enumerate(row)
                  if pixels[i, j] == False]
 
-        print(pixels.shape)
+        # print(pixels.shape)
         total_width = pixels.shape[0]*SCALE
 
         def cubes_splitted(cubes: OpenSCADObject, size=20) -> list[OpenSCADObject]:
@@ -91,7 +92,7 @@ class QrCodeGenerator:
         linear_extrudes = [color('black')(linear_extrude(height=HEIGHT)(
             *cube_chunk)) for cube_chunk in cube_chunks]
 
-        print(total_width, "total_width")
+        # print(total_width, "total_width")
 
         # import OpenSCAD file to generate base plate of tag
         use(open_scad_base)
@@ -106,25 +107,28 @@ class QrCodeGenerator:
         filepath_png = os.path.join(export_dir, f"{basefilename}.png")
 
         openscad_script_content = scad_render(qrobj)
+        self.__save_scad_file(filepath_scad, openscad_script_content)
+        self.__generate_qrcode_stl(filepath_stl, filepath_scad)
+        self.__generate_qrcode_png(filepath_scad, filepath_png)
+
+    def __save_scad_file(self, filepath_scad, openscad_script_content):
         f = open(filepath_scad, "w+", encoding="utf-8")
         f.write(openscad_script_content)
         f.close()
 
-        self.__generate_qrcode_stl(filepath_stl, filepath_scad)
-        self.__generate_qrcode_png(filepath_scad, filepath_png)
-
     def __generate_qrcode_png(self, filepath_scad, filepath_png):
-        osr = OpenScadRunner(filepath_scad, filepath_png,
-                             render_mode=RenderMode.preview, imgsize=(800, 600), antialias=2.0)
-        osr.run()
-        for line in osr.echos:
-            print(line)
-        for line in osr.warnings:
-            print(line)
-        for line in osr.errors:
-            print(line)
-        if osr.good():
-            print("Successfully created png")
+        if not os.path.exists(filepath_png) or OVERWRITE_PNG:
+            osr = OpenScadRunner(filepath_scad, filepath_png,
+                                 render_mode=RenderMode.preview, imgsize=(800, 600), antialias=2.0)
+            osr.run()
+            for line in osr.echos:
+                print(line)
+            for line in osr.warnings:
+                print(line)
+            for line in osr.errors:
+                print(line)
+            if osr.good():
+                print("Successfully created png")
 
     def __generate_qrcode_stl(self, filepath_stl, filepath_scad):
         if not os.path.exists(filepath_stl) or OVERWRITE_STL:

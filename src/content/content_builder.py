@@ -1,5 +1,4 @@
 from __future__ import annotations
-from turtle import update
 from src.qrcode.qrcode_generator import QrCodeGenerator
 import multiprocessing as mp
 import dataclasses
@@ -20,6 +19,8 @@ logger = logging.getLogger(__name__)
 # this means that log messages from your code and log messages from the
 # libraries that you use will all show up on the terminal.
 coloredlogs.install(level='DEBUG', logger=logger)
+
+SCAD_BASEPLATE_PATH = "models/BasePlate.scad"
 
 
 class EnhancedJSONEncoder(json.JSONEncoder):
@@ -86,7 +87,6 @@ class Producer:
         return next((i for i, material in enumerate(self.materials) if material.name == materialname), -1)
 
     def update(self, updated_producer: Producer) -> None:
-        logger.info("Update producer %s", updated_producer)
         for updated_material in updated_producer.materials:
             if not self.__material_in_list(updated_material.name):
                 self.materials.append(updated_material)
@@ -141,7 +141,7 @@ def generate_filament_content(producer: Producer, material: Material, material_p
     filament_exportdir = os.path.join(
         material_path, clear_name(filament.name))
     qrcg.from_url_to_stl(url_to_page, filament_exportdir,
-                         clear_name(filament.name), "models/BasePlate.scad")
+                         clear_name(filament.name), SCAD_BASEPLATE_PATH)
 
 
 def __write_filament_file(filepath: str, producer: Producer, material: Material, filament: Filament):
@@ -192,10 +192,8 @@ class ContentBuilder:
 
     def load_producer(self, filepath: str) -> None:
         """load producer from YAML file"""
-        logger.info("Load producer %s", filepath)
+        logger.info("Load producer from file '%s'", filepath)
         producer = producer_from_yaml(filepath)
-        logger.debug(producer)
-        logger.info(json.dumps([producer], cls=EnhancedJSONEncoder))
         if producer is not None:
             if not self.__producer_in_list(producer.name):
                 self.producers.append(producer)
@@ -203,11 +201,17 @@ class ContentBuilder:
                 index = self.__producer_index(producer.name)
                 self.producers[index].update(producer)
 
+            # statistics
+            len_materials = len(producer.materials)
+            len_filaments = sum([len(mat.filaments)
+                                for mat in producer.materials])
+            logger.info("Producer: %s - %d materials, %d filaments",
+                        producer.name, len_materials, len_filaments)
+
     def save_producers_data(self, filepath: str):
         """save producers to JSON file"""
         jsonstring = json.dumps(
             self.producers, cls=EnhancedJSONEncoder, indent=4)
-        logger.debug(jsonstring)
         with open(filepath, "w+", encoding="utf-8") as stream:
             stream.write(jsonstring)
 
@@ -222,15 +226,13 @@ class ContentBuilder:
         for producer in self.producers:
             for material in producer.materials:
                 for filament in material.filaments:
-                    print(filament.id)
                     if filament.id is None:
                         filament.id = str(uuid4())
 
     def generate_content(self, producers_basepath: str):
         """generate content files"""
 
-        if not os.path.exists(producers_basepath):
-            os.mkdir(producers_basepath)
+        ensure_directory(producers_basepath)
 
         for producer in self.producers:
             self.__generate_procuder_content(
@@ -255,29 +257,19 @@ class ContentBuilder:
         self.__generate_material_index(
             producer, material, material_path)
 
-        # Step 1: Init multiprocessing.Pool()
         pool = mp.Pool(mp.cpu_count())
 
         results = []
 
         def collect_result(result):
-            # global results
             results.append(result)
 
-        # Step 2: `pool.apply` the `howmany_within_range()`
         for filament in material.filaments:
             pool.apply_async(generate_filament_content, args=(
                 producer, material, material_path, filament), callback=collect_result)
 
-        # Step 3: Don't forget to close
         pool.close()
         pool.join()
-
-        print(results)
-
-        # for filament in material.filaments:
-        #     self.__generate_filament_content(
-        #         producer, material, material_path, filament)
 
     def __generate_producer_index(self, producer: Producer, producer_path: str):
         filepath = os.path.join(producer_path, "_index.md")
