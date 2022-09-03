@@ -160,10 +160,11 @@ class ContentBuilder:
             filament_path, producer, material, filament)
 
         qrcg = QrCodeGenerator()
-        url_to_page = "https://open-smartwatch.github.io/resources/firmware/#lang_stw_start-was-not-declared-in-this-scope"
+        url_to_page = "https://open-filament.github.io/f/{filament.id}"
         filament_exportdir = os.path.join(
             material_path, clear_name(filament.name))
-        qrcg.from_url_to_stl(url_to_page, filament_exportdir, filament.id)
+        qrcg.from_url_to_stl(url_to_page, filament_exportdir,
+                             filament.id, "models/BasePlate.scad")
 
     def __generate_producer_index(self, producer: Producer, producer_path: str):
         filepath = os.path.join(producer_path, "_index.md")
@@ -182,7 +183,7 @@ class ContentBuilder:
             "id": filament.id,
             "title": filament.name,
             "aliases": [
-                f"/{filament.id}"
+                f"/f/{filament.id}"
             ],
             "material": material.name,
             "producer": producer.name,

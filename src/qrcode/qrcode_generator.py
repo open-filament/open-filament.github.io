@@ -1,11 +1,13 @@
+from email.mime import base
+from typing import Callable
 import qrcode
 from qrcode.image.styledpil import StyledPilImage
 from qrcode.image.styles.moduledrawers import RoundedModuleDrawer
 from qrcode.image.styles.colormasks import RadialGradiantColorMask
 # import qrcode.image.svg
 import numpy
-from solid import difference, cube, sphere, scad_render
-from solid import color, cube, scad_render, translate, union
+from solid import difference, cube, sphere, scad_render, OpenSCADObject, intersection, import_scad, use
+from solid import color, cube, scad_render, translate, union, square, linear_extrude
 # from solid import *
 from openscad_runner import OpenScadRunner, RenderMode, ColorScheme
 from PIL import Image
@@ -22,7 +24,7 @@ class QrCodeGenerator:
             version=1,
             error_correction=qrcode.constants.ERROR_CORRECT_L,
             box_size=1,
-            border=4,
+            border=1,
         )
 
         if not os.path.exists("tmp"):
@@ -54,7 +56,7 @@ class QrCodeGenerator:
     #     # Save svg file somewhere
     #     img.save("qrcode.svg")
 
-    def from_url_to_stl(self, url: str, export_dir: str, basefilename: str):
+    def from_url_to_stl(self, url: str, export_dir: str, basefilename: str, open_scad_base: str):
 
         if not os.path.exists(export_dir):
             os.mkdir(export_dir)
@@ -65,25 +67,77 @@ class QrCodeGenerator:
 
         # Create an image from the QR Code instance
         img: Image = self.qr.make_image()
-        print(img)
+        # print(img)
         filepath_qrcode_png = os.path.join(
             export_dir, f"{basefilename}.qrcode.png")
         img.save(filepath_qrcode_png)
 
         pixels = numpy.array(img)
-        print(pixels)
+        # print(pixels)
 
         # output defaults to 1 mm per unit; this lets us increase the size of objects proportionally.
-        SCALE = 2
-        HEIGHT = 2
-        cubes = [translate([i*SCALE, j*SCALE, 0])(color('black')(cube(size=[SCALE, SCALE, HEIGHT])))
+        SCALE = 1.5
+        HEIGHT = 1.1
+        cubes = [translate([i*SCALE, j*SCALE, 0])(square(size=[SCALE, SCALE]))
                  for i, row in enumerate(pixels)
                  for j, col in enumerate(row)
                  if pixels[i, j] == False]
 
-        base_plate = color('white')(
-            cube(size=(pixels.shape[0] * SCALE, pixels.shape[1] * SCALE, HEIGHT / 2)))
-        qrobj = union()(base_plate, *cubes)
+        print(pixels.shape)
+        total_width = pixels.shape[0]*SCALE
+
+        # base_plate = color('white')(
+        #     cube(size=(pixels.shape[0] * SCALE, pixels.shape[1] * SCALE, HEIGHT / 2)))
+        # qrobj = union()(base_plate, *cubes)
+
+        # def cube_fn(cubes: list[OpenSCADObject], base_element: OpenSCADObject) -> OpenSCADObject:
+        #     return union()(
+        #         cubes[0],
+        #         cube_fn(cubes[1:], base_element) if len(
+        #             cubes) > 1 else base_element
+        #     )
+
+        # qrobj = cube_fn(cubes, base_plate)
+
+        # qrobj = union()(
+        #     translate([0, 0, -1])(
+        #         cube([90, 90, 1])
+        #     ),
+        #     linear_extrude(height=1)(
+        #         intersection()(
+        #             square([90, 90]),
+        #             *cubes
+        #         )
+        #     )
+        # )
+
+        # qrobj = union()(
+        #     cube([90, 90, 0.5]),
+        #     linear_extrude(height=HEIGHT)(
+        #         # intersection()(
+        #         # square([90, 90]),
+        #         *cubes
+        #         # )
+        #     )
+        # )
+
+        def cubes_splitted(cubes: OpenSCADObject, size=20) -> list[OpenSCADObject]:
+            # looping till length cubes
+            for i in range(0, len(cubes), size):
+                yield cubes[i:i + size]
+
+        cube_chunks = list(cubes_splitted(cubes, 5))
+        linear_extrudes = [color('black')(linear_extrude(height=HEIGHT)(
+            *cube_chunk)) for cube_chunk in cube_chunks]
+
+        print(total_width, "total_width")
+
+        use(open_scad_base)
+        qrobj = union()(
+            BasePlate(inner_size=total_width, margin=0, hole_margin=5),
+            # translate([0, 0, 2])(cube([30, 30, 1], center=True)),
+            *linear_extrudes
+        )
 
         filepath_stl = os.path.join(export_dir, f"{basefilename}.stl")
         filepath_scad = os.path.join(export_dir, f"{basefilename}.scad")
