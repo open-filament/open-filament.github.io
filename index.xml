@@ -79,6 +79,18 @@
     </item>
     
     <item>
+      <title>Getting started</title>
+      <link>https://open-filament.github.io/howtos/getting_started/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/howtos/getting_started/</guid>
+      <description>Find your filament Goto Producers and select your producer, material and the filament by name. At the moment we don&amp;rsquo;t offer different colors. Maybe we will extend the filament selection sometimes by a color palette.
+Each filament can be accesed by a shorter link, this link is used for QR-Code generation.
+When you miss one of your producers or materials or filaments, see the contribute page for more information.
+Download .</description>
+    </item>
+    
+    <item>
       <title>Jet Black</title>
       <link>https://open-filament.github.io/producers/prusament/asa/jet-black/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
