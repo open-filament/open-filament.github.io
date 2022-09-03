@@ -19,7 +19,7 @@
                 <div class="column">
                     <p>
                         {{ range .Params.assets }}
-                        <a href="{{ .filename }}" class="button">{{.name}}</a>
+                        <a href="{{ .filename }}" class="button" download>{{.name}}</a>
                         {{ end}}
                     </p>
 
