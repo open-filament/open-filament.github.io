@@ -1,19 +1,12 @@
-from email.mime import base
-from typing import Callable
 import qrcode
-from qrcode.image.styledpil import StyledPilImage
-from qrcode.image.styles.moduledrawers import RoundedModuleDrawer
-from qrcode.image.styles.colormasks import RadialGradiantColorMask
-# import qrcode.image.svg
 import numpy
 from solid import difference, cube, sphere, scad_render, OpenSCADObject, intersection, import_scad, use
 from solid import color, cube, scad_render, translate, union, square, linear_extrude
-# from solid import *
 from openscad_runner import OpenScadRunner, RenderMode, ColorScheme
 from PIL import Image
 import os
 
-OVERWRITE_STL = True
+OVERWRITE_STL = False
 SCALE = 1.0
 HEIGHT = 1.1
 
@@ -100,6 +93,7 @@ class QrCodeGenerator:
 
         print(total_width, "total_width")
 
+        # import OpenSCAD file to generate base plate of tag
         use(open_scad_base)
         qrobj = union()(
             BasePlate(inner_size=total_width, margin=0, hole_margin=5),

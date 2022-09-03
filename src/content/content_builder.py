@@ -102,6 +102,16 @@ def __write_filament_file(filepath: str, producer: Producer, material: Material,
     data = {
         "id": filament.id,
         "title": filament.name,
+        "thumbnail": f"{clear_name(filament.name)}.png",
+        "assets": [
+            {"name": "STL model",
+                "filename": f"{clear_name(filament.name)}.stl"},
+            {"name": "QR-Code",
+                "filename": f"{clear_name(filament.name)}.qrcode.png"},
+            {"name": "OpenSCAD file",
+                "filename": f"{clear_name(filament.name)}.scad"},
+            {"name": "Preview", "filename": f"{clear_name(filament.name)}.png"}
+        ],
         "aliases": [
             f"/f/{filament.id}"
         ],

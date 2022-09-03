@@ -13,12 +13,14 @@
             <div class="columns">
                 <div class="column">
                     <figure class="image">
-                        <img src="{{ .Params.id }}.png">
+                        <img src="{{ .Params.thumbnail }}">
                     </figure>
                 </div>
                 <div class="column">
                     <p>
-                        <a href="{{ .Params.id }}.stl" class="button">STL-Download</a>
+                        {{ range .Params.assets }}
+                        <a href="{{ .filename }}" class="button">{{.name}}</a>
+                        {{ end}}
                     </p>
 
                     <p>Producer: {{.Params.producer}}</p>
@@ -37,7 +39,6 @@
 </section>
 <section class="section">
     <div class="container">
-        <img src="{{ .Params.id }}.qrcode.png">
         <a href="{{ .Site.BaseURL }}f/{{ .Params.id }}">{{ .Site.BaseURL }}f/{{ .Params.id }}</a> Permalink (short)
     </div>
 </section>
