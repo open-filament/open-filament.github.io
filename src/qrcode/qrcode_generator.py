@@ -13,6 +13,10 @@ from openscad_runner import OpenScadRunner, RenderMode, ColorScheme
 from PIL import Image
 import os
 
+OVERWRITE_STL = True
+SCALE = 1.0
+HEIGHT = 1.1
+
 
 class QrCodeGenerator:
 
@@ -76,8 +80,7 @@ class QrCodeGenerator:
         # print(pixels)
 
         # output defaults to 1 mm per unit; this lets us increase the size of objects proportionally.
-        SCALE = 1.5
-        HEIGHT = 1.1
+
         cubes = [translate([i*SCALE, j*SCALE, 0])(square(size=[SCALE, SCALE]))
                  for i, row in enumerate(pixels)
                  for j, col in enumerate(row)
@@ -85,41 +88,6 @@ class QrCodeGenerator:
 
         print(pixels.shape)
         total_width = pixels.shape[0]*SCALE
-
-        # base_plate = color('white')(
-        #     cube(size=(pixels.shape[0] * SCALE, pixels.shape[1] * SCALE, HEIGHT / 2)))
-        # qrobj = union()(base_plate, *cubes)
-
-        # def cube_fn(cubes: list[OpenSCADObject], base_element: OpenSCADObject) -> OpenSCADObject:
-        #     return union()(
-        #         cubes[0],
-        #         cube_fn(cubes[1:], base_element) if len(
-        #             cubes) > 1 else base_element
-        #     )
-
-        # qrobj = cube_fn(cubes, base_plate)
-
-        # qrobj = union()(
-        #     translate([0, 0, -1])(
-        #         cube([90, 90, 1])
-        #     ),
-        #     linear_extrude(height=1)(
-        #         intersection()(
-        #             square([90, 90]),
-        #             *cubes
-        #         )
-        #     )
-        # )
-
-        # qrobj = union()(
-        #     cube([90, 90, 0.5]),
-        #     linear_extrude(height=HEIGHT)(
-        #         # intersection()(
-        #         # square([90, 90]),
-        #         *cubes
-        #         # )
-        #     )
-        # )
 
         def cubes_splitted(cubes: OpenSCADObject, size=20) -> list[OpenSCADObject]:
             # looping till length cubes
@@ -165,7 +133,7 @@ class QrCodeGenerator:
             print("Successfully created png")
 
     def __generate_qrcode_stl(self, filepath_stl, filepath_scad):
-        if not os.path.exists(filepath_stl):
+        if not os.path.exists(filepath_stl) or OVERWRITE_STL:
             osr = OpenScadRunner(filepath_scad, filepath_stl)
             osr.run()
             for line in osr.echos:

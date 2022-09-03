@@ -1,5 +1,6 @@
 from __future__ import annotations
 import dataclasses
+from subprocess import call
 from uuid import uuid4
 import json
 import os
@@ -7,6 +8,7 @@ from dataclasses import dataclass
 from typing import Optional
 import yaml
 
+import multiprocessing as mp
 from src.qrcode.qrcode_generator import QrCodeGenerator
 
 
@@ -82,6 +84,43 @@ def clear_name(filename: str) -> str:
     return filename
 
 
+def generate_filament_content(producer: Producer, material: Material, material_path: str, filament: Filament):
+    filament_path = os.path.join(
+        material_path, f"{clear_name(filament.name)}.md")
+    __write_filament_file(
+        filament_path, producer, material, filament)
+
+    qrcg = QrCodeGenerator()
+    url_to_page = f"https://open-filament.github.io/f/{filament.id}"
+    filament_exportdir = os.path.join(
+        material_path, clear_name(filament.name))
+    qrcg.from_url_to_stl(url_to_page, filament_exportdir,
+                         clear_name(filament.name), "models/BasePlate.scad")
+
+
+def __write_filament_file(filepath: str, producer: Producer, material: Material, filament: Filament):
+    data = {
+        "id": filament.id,
+        "title": filament.name,
+        "aliases": [
+            f"/f/{filament.id}"
+        ],
+        "material": material.name,
+        "producer": producer.name,
+        "type": "filament"
+    }
+    write_content_file(filepath, data, False)
+
+
+def write_content_file(filepath: str, data: dict, skip_if_exists: bool = True):
+    if os.path.exists(filepath) and skip_if_exists:
+        return
+
+    with open(filepath, "w+", encoding="utf-8") as stream:
+        jsonstring = json.dumps(data)
+        stream.write(jsonstring)
+
+
 class ContentBuilder:
 
     producers: list[Producer]
@@ -149,52 +188,38 @@ class ContentBuilder:
         self.__generate_material_index(
             producer, material, material_path)
 
+        # Step 1: Init multiprocessing.Pool()
+        pool = mp.Pool(mp.cpu_count())
+
+        results = []
+
+        def collect_result(result):
+            # global results
+            results.append(result)
+
+        # Step 2: `pool.apply` the `howmany_within_range()`
         for filament in material.filaments:
-            self.__generate_filament_content(
-                producer, material, material_path, filament)
+            pool.apply_async(generate_filament_content, args=(
+                producer, material, material_path, filament), callback=collect_result)
 
-    def __generate_filament_content(self, producer: Producer, material: Material, material_path: str, filament: Filament):
-        filament_path = os.path.join(
-            material_path, f"{clear_name(filament.name)}.md")
-        self.__write_filament_file(
-            filament_path, producer, material, filament)
+        # Step 3: Don't forget to close
+        pool.close()
+        pool.join()
 
-        qrcg = QrCodeGenerator()
-        url_to_page = "https://open-filament.github.io/f/{filament.id}"
-        filament_exportdir = os.path.join(
-            material_path, clear_name(filament.name))
-        qrcg.from_url_to_stl(url_to_page, filament_exportdir,
-                             filament.id, "models/BasePlate.scad")
+        print(results)
+
+        # for filament in material.filaments:
+        #     self.__generate_filament_content(
+        #         producer, material, material_path, filament)
 
     def __generate_producer_index(self, producer: Producer, producer_path: str):
         filepath = os.path.join(producer_path, "_index.md")
         title = producer.name
         data = {"title": title}
-        self.__write_content_file(filepath, data)
+        write_content_file(filepath, data)
 
     def __generate_material_index(self, producer: Producer, material: Material, material_path: str):
         filepath = os.path.join(material_path, "_index.md")
         title = f"{producer.name} - {material.name}"
         data = {"title": title}
-        self.__write_content_file(filepath, data)
-
-    def __write_filament_file(self, filepath: str, producer: Producer, material: Material, filament: Filament):
-        data = {
-            "id": filament.id,
-            "title": filament.name,
-            "aliases": [
-                f"/f/{filament.id}"
-            ],
-            "material": material.name,
-            "producer": producer.name,
-            "type": "filament"
-        }
-        self.__write_content_file(filepath, data, False)
-
-    def __write_content_file(self, filepath: str, data: dict, skip_if_exists: bool = True):
-        if os.path.exists(filepath) and skip_if_exists:
-            return
-
-        with open(filepath, "w+", encoding="utf-8") as stream:
-            jsonstring = json.dumps(data)
-            stream.write(jsonstring)
+        write_content_file(filepath, data)
