@@ -1,13 +1,16 @@
 {{ define "main" }}
-<section class="hero has-background-white-ter">
+<section class="hero has-background-white-bis">
     <div class="container">
+        <figure>
+            <img src="open-filament-header-vignette.jpg">
+        </figure>
         <div class="hero-body">
             <p class="title">
                 {{.Title}}
             </p>
-            <p class="subtitle">
-                {{.Site.Params.description}}
-            </p>
+            <div class="content">
+                {{.Content}}
+            </div>
         </div>
     </div>
 </section>

@@ -6,4 +6,4 @@ sectionPagesMenu = "main"
 
 [params]
 logo = "/logo.png"
-description = "Open-Filament is an collection of filament producers, materials and product lines. It's main purpose is to give you an easy solution to label you test print's and filament spools with a QR-Code or the link to an quick overview over your loved filaments."
+respository = "https://github.com/open-filament/open-filament.github.io"
