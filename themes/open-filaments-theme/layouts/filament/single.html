@@ -3,29 +3,54 @@
 {{ .Title }} &ndash; {{ .Site.Title }}
 {{ end }}
 {{ define "main" }}
-<section class="section">
+<section class="section" style="background:{{.Params.data.color}}">
     <div class="container">
         <div class="content">
-
-            <h1 class="title">{{ .Title }}</h1>
-            <h3 class="subtitle">{{ .Params.material }} by {{.Params.producer}}</h3>
+            <div class="box">
+                <h1 class="title">{{ .Title }}</h1>
+                <span>{{ .Params.material }} by {{.Params.producer}}</span>
+            </div>
 
             <div class="columns">
                 <div class="column">
-                    <figure class="image">
-                        <img src="{{ .Params.thumbnail }}">
-                    </figure>
+                    <div class="box">
+
+                        <figure class="image">
+                            <img src="{{ .Params.thumbnail }}">
+                        </figure>
+                    </div>
                 </div>
                 <div class="column">
-                    <p>
-                        {{ range .Params.assets }}
-                        <a href="{{ .filename }}" class="button" download>{{.name}}</a>
-                        {{ end}}
-                    </p>
+                    <div class="box">
+                        <h2>Assets</h2>
+                        <p>
+                            {{ range .Params.assets }}
+                            <a href="{{ .filename }}" class="button" download>{{.name}}</a>
+                            {{ end}}
+                        </p>
 
-                    <p>Producer: {{.Params.producer}}</p>
-                    <p>Material: {{.Params.material}}</p>
-                    <p>Name: {{.Title}}</p>
+                        <h2>Details</h2>
+                        <table class="table">
+                            <tr>
+                                <td>Producer</td>
+                                <td>{{.Params.producer}}</td>
+                            </tr>
+                            <tr>
+                                <td>Material</td>
+                                <td>{{.Params.material}}</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>{{.Title}}</td>
+                            </tr>
+                            <tr>
+                                <td>Color</td>
+                                <td><span class="tag is-large"
+                                        style="background:{{.Params.data.color}}">{{.Params.data.color}}</span></td>
+                            </tr>
+                        </table>
+                    </div>
+
                 </div>
             </div>
 

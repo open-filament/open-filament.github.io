@@ -35,16 +35,19 @@ class EnhancedJSONEncoder(json.JSONEncoder):
 @dataclass
 class Filament:
     name: str
+    data: dict[str, str] | None
     id: Optional[str] = None
 
     @staticmethod
     def from_json(d: dict) -> Filament:
-        return Filament(d['name'], d['id'])
+        return Filament(d['name'], d['data'] if 'data' in d else None, d['id'])
 
     def update(self, updated_filament: Filament) -> None:
         self.name = updated_filament.name
         if updated_filament.id is not None:
             self.id = updated_filament.id
+        if updated_filament.data is not None:
+            self.data = updated_filament.data
 
 
 @dataclass
@@ -95,10 +98,11 @@ class Producer:
                 self.materials[index].update(updated_material)
 
 
-def producer_from_yaml(filepath: str):
+def producer_from_yaml(filepath: str) -> Producer | None:
     with open(filepath, "r", encoding="utf-8") as stream:
         try:
             yaml_obj = yaml.safe_load(stream)
+            logger.debug(yaml_obj)
             producer = producer_yaml_to_object(yaml_obj)
             return producer
         except yaml.YAMLError as exc:
@@ -109,9 +113,11 @@ def producer_yaml_to_object(yaml_obj) -> Producer:
     materials: list[Material] = []
     yaml_materials = yaml_obj["producer"]["materials"]
     for yaml_material_name in yaml_materials:
-        yaml_filaments = yaml_materials[yaml_material_name]
-        filaments = [Filament(filament_name)
-                     for filament_name in yaml_filaments]
+        yaml_filaments = yaml_materials[yaml_material_name]["filaments"]
+        filament_names = yaml_filaments.keys()
+        print(filament_names)
+        filaments = [Filament(filament_name, id=None, data=yaml_filaments[filament_name])
+                     for filament_name in filament_names]
         materials.append(Material(yaml_material_name, filaments))
 
     return Producer(yaml_obj["producer"]["name"], materials)
@@ -158,6 +164,7 @@ def __write_filament_file(filepath: str, producer: Producer, material: Material,
                 "filename": f"{clear_name(filament.name)}.scad"},
             {"name": "Preview", "filename": f"{clear_name(filament.name)}.png"}
         ],
+        "data": filament.data,
         "aliases": [
             f"/f/{filament.id}"
         ],
@@ -194,6 +201,7 @@ class ContentBuilder:
         """load producer from YAML file"""
         logger.info("Load producer from file '%s'", filepath)
         producer = producer_from_yaml(filepath)
+        logger.debug(producer)
         if producer is not None:
             if not self.__producer_in_list(producer.name):
                 self.producers.append(producer)

@@ -2,6 +2,8 @@ producer:
   name: eSUN
   materials:
     PLA+:
-      - PLAPlus Filament
+      filaments:
+        PLAPlus Filament:
     PETG:
-      - 3D Filament - PETG
+      filaments:
+        3D Filament - PETG:

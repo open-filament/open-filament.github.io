@@ -31,7 +31,10 @@ producer:
   name: example producer
   materials:
     PLA+:
-      - PLAPlus Filament
+      filaments:
+        PLAPlus Filament:
+          color: "#FF0000"
     PETG:
-      - 3D Filament - PETG
+      filaments:
+        3D Filament - PETG:
 ```
