@@ -60,7 +60,7 @@
       <description>When you want to contribute, visit GitHub first.
 New producers Each producer will be saved under data/ folder as YAML file. Feel free to create a pull request on GitHub to extend the number of producers.
 See example.yml
-producer: name: example producer materials: PLA+: - PLAPlus Filament PETG: - 3D Filament - PETG </description>
+producer: name: example producer materials: PLA+: filaments: PLAPlus Filament: color: &amp;#34;#FF0000&amp;#34; PETG: filaments: 3D Filament - PETG: </description>
     </item>
     
     <item>
