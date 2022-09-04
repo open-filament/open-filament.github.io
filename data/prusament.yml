@@ -6,35 +6,132 @@ producer:
         Jet Black:
           color: "#000000"
         Prusa Orange:
+          color: "#E1724E"
         Galaxy Black:
+          color: "#454447"
         Ultramarine Blue Transparent:
+          color: "#3B418F"
         Clear:
+          color: "#dcdcdc"
         Signal White:
+          color: "#EBE9EC"
         Urban Grey:
+          color: "#A8A8A8"
         Anthracite Grey:
+          color: "#1E2025"
         Mango Yellow:
+          color: "#F0B619"
         Yellow Gold:
+          color: "#8D792A"
         Terracotta Light:
+          color: "#D48663"
         Prusa Orange Transparent:
+          color: "#FC6C29"
         Lipstick Red:
+          color: "#890605"
         Carmine Red Transparent:
+          color: "#83070A"
         Chalky Blue:
           color: "#90bae0"
         Ocean Blue:
+          color: "#073F47"
         Pistachio Green:
+          color: "#728B62"
         Neon Green Transparent:
+          color: "#83D440"
         Jungle Green:
+          color: "#043115"
     ASA:
       filaments:
         Prusa Orange:
+          color: "#FE631A"
         Prusa Galaxy Black:
+          color: "#969293"
         Jet Black:
+          color: "#FEFEFE"
         Natural:
+          color: "#DFD1B7"
         Sapphire Blue:
+          color: "#2B304B"
         Lipstick Red:
+          color: "#FDFBF9"
         Signal White:
+          color: "#E6E6E6"
     PLA:
       filaments:
         Galaxy Silver:
+          color: "#8E8E8E"
         Prusa Galaxy Black:
+          color: "#2A2E39"
         Lipstick Red:
+          color: "#D52726"
+        Army Green:
+          color: "#647152"
+        Azure Blue:
+          color: "#3B9CE2"
+        Galaxy Black:
+          color: "#3E4250"
+        Galaxy Purple:
+          color: "#6748A1"
+        Gentleman's Grey:
+          color: "#626C8C"
+        Gravity Grey:
+          color: "#6B6C6F"
+        Jet Black:
+          color: "#333135"
+        Blend Lime Green:
+          color: "#DEED9C"
+        Marble Grey:
+          color: "#A8A8A8"
+        Blend Ms. Pink:
+          color: "#C63D76"
+        Blend My Silverness:
+          color: "#B5B4BD"
+        Blend Oh My Gold:
+          color: "#D9A921"
+        Opal Green:
+          color: "#4E8D7A"
+        Pearl Mouse:
+          color: "#9A9090"
+        Blend Pearl White:
+          color: "#C4C6BB"
+        Pineapple Yellow:
+          color: "#FDE01E"
+        Prusa Orange:
+          color: "#FD8603"
+        Blend Royal Blue:
+          color: "#5690D3"
+        Simply Green:
+          color: "#3EA326"
+        Vanilla White:
+          color: "#D2C9C6"
+        Blend Viva La Bronze:
+          color: "#AF8221"
+
+    PVB:
+      filaments:
+        Dark Blue Transparent:
+          color: "#0153B8"
+        Bright Green Transparent:
+          color: "#CEDB4C"
+        Light Yellow Transparent:
+          color: "#F3DC2F"
+        Natural Transparent:
+          color: "#E8E7E2"
+        Prusa Orange Transparent:
+          color: "#FEA81C"
+        Smoky Black Transparent:
+          color: "#B9BEBA"
+
+    PC:
+      filaments:
+        Prusament PC Blend Carbon Fiber Black:
+          color: "#000000"
+        Prusament PC Blend Jet Black:
+          color: "#1B1B21"
+        Prusament PC Blend Natural:
+          color: "#D6D6D1"
+        Prusament PC Blend Prusa Orange:
+          color: "#FB641B"
+        Prusament PC Blend Urban Grey:
+          color: "#ADADAD"

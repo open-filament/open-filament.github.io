@@ -131,6 +131,8 @@ def ensure_directory(path: str):
 def clear_name(filename: str) -> str:
     filename = filename.lower()
     filename = filename.replace(" ", "-")
+    filename = filename.replace("'", "")
+    filename = filename.replace(".", "")
     while "--" in filename:
         filename = filename.replace("--", "-")
     return filename
@@ -265,7 +267,7 @@ class ContentBuilder:
         self.__generate_material_index(
             producer, material, material_path)
 
-        pool = mp.Pool(mp.cpu_count())
+        pool = mp.Pool(mp.cpu_count()-2)
 
         results = []
 

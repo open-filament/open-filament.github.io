@@ -6,6 +6,7 @@
             <thead>
                 <tr>
                     <td>Title</td>
+                    <td></td>
                     <td>Link</td>
                 </tr>
             </thead>
@@ -14,6 +15,10 @@
                 {{ range .Pages }}
                 <tr>
                     <td>{{ .Title }}</td>
+                    <td>
+                        <span class="tag" style="background:{{ .Params.data.color }}; min-width:50px;"></span>
+
+                    </td>
                     <td><a href="{{ .Permalink}}" class="button is-link">Open</a></td>
                 </tr>
                 {{ end }}
