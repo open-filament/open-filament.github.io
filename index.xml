@@ -25,6 +25,96 @@
     </item>
     
     <item>
+      <title>Army Green</title>
+      <link>https://open-filament.github.io/producers/prusament/pla/army-green/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pla/army-green/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Azure Blue</title>
+      <link>https://open-filament.github.io/producers/prusament/pla/azure-blue/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pla/azure-blue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blend Lime Green</title>
+      <link>https://open-filament.github.io/producers/prusament/pla/blend-lime-green/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pla/blend-lime-green/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blend Ms. Pink</title>
+      <link>https://open-filament.github.io/producers/prusament/pla/blend-ms-pink/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pla/blend-ms-pink/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blend My Silverness</title>
+      <link>https://open-filament.github.io/producers/prusament/pla/blend-my-silverness/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pla/blend-my-silverness/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blend Oh My Gold</title>
+      <link>https://open-filament.github.io/producers/prusament/pla/blend-oh-my-gold/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pla/blend-oh-my-gold/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blend Pearl White</title>
+      <link>https://open-filament.github.io/producers/prusament/pla/blend-pearl-white/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pla/blend-pearl-white/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blend Royal Blue</title>
+      <link>https://open-filament.github.io/producers/prusament/pla/blend-royal-blue/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pla/blend-royal-blue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blend Viva La Bronze</title>
+      <link>https://open-filament.github.io/producers/prusament/pla/blend-viva-la-bronze/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pla/blend-viva-la-bronze/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bright Green Transparent</title>
+      <link>https://open-filament.github.io/producers/prusament/pvb/bright-green-transparent/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pvb/bright-green-transparent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Carmine Red Transparent</title>
       <link>https://open-filament.github.io/producers/prusament/petg/carmine-red-transparent/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -64,11 +154,38 @@ producer: name: example producer materials: PLA+: filaments: PLAPlus Filament: c
     </item>
     
     <item>
+      <title>Dark Blue Transparent</title>
+      <link>https://open-filament.github.io/producers/prusament/pvb/dark-blue-transparent/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pvb/dark-blue-transparent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Galaxy Black</title>
       <link>https://open-filament.github.io/producers/prusament/petg/galaxy-black/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://open-filament.github.io/producers/prusament/petg/galaxy-black/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Galaxy Black</title>
+      <link>https://open-filament.github.io/producers/prusament/pla/galaxy-black/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pla/galaxy-black/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Galaxy Purple</title>
+      <link>https://open-filament.github.io/producers/prusament/pla/galaxy-purple/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pla/galaxy-purple/</guid>
       <description></description>
     </item>
     
@@ -289,6 +406,15 @@ producer: name: example producer materials: PLA+: filaments: PLAPlus Filament: c
     </item>
     
     <item>
+      <title>Gentleman&#39;s Grey</title>
+      <link>https://open-filament.github.io/producers/prusament/pla/gentlemans-grey/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pla/gentlemans-grey/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Getting started</title>
       <link>https://open-filament.github.io/howtos/getting_started/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -298,6 +424,15 @@ producer: name: example producer materials: PLA+: filaments: PLAPlus Filament: c
 Each filament can be accesed by a shorter link, this link is used for QR-Code generation.
 When you miss one of your producers or materials or filaments, see the contribute page for more information.
 Download .</description>
+    </item>
+    
+    <item>
+      <title>Gravity Grey</title>
+      <link>https://open-filament.github.io/producers/prusament/pla/gravity-grey/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pla/gravity-grey/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -319,11 +454,29 @@ Download .</description>
     </item>
     
     <item>
+      <title>Jet Black</title>
+      <link>https://open-filament.github.io/producers/prusament/pla/jet-black/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pla/jet-black/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Jungle Green</title>
       <link>https://open-filament.github.io/producers/prusament/petg/jungle-green/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://open-filament.github.io/producers/prusament/petg/jungle-green/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Light Yellow Transparent</title>
+      <link>https://open-filament.github.io/producers/prusament/pvb/light-yellow-transparent/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pvb/light-yellow-transparent/</guid>
       <description></description>
     </item>
     
@@ -364,11 +517,29 @@ Download .</description>
     </item>
     
     <item>
+      <title>Marble Grey</title>
+      <link>https://open-filament.github.io/producers/prusament/pla/marble-grey/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pla/marble-grey/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Natural</title>
       <link>https://open-filament.github.io/producers/prusament/asa/natural/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://open-filament.github.io/producers/prusament/asa/natural/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Natural Transparent</title>
+      <link>https://open-filament.github.io/producers/prusament/pvb/natural-transparent/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pvb/natural-transparent/</guid>
       <description></description>
     </item>
     
@@ -387,6 +558,33 @@ Download .</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://open-filament.github.io/producers/prusament/petg/ocean-blue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Opal Green</title>
+      <link>https://open-filament.github.io/producers/prusament/pla/opal-green/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pla/opal-green/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pearl Mouse</title>
+      <link>https://open-filament.github.io/producers/prusament/pla/pearl-mouse/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pla/pearl-mouse/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pineapple Yellow</title>
+      <link>https://open-filament.github.io/producers/prusament/pla/pineapple-yellow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pla/pineapple-yellow/</guid>
       <description></description>
     </item>
     
@@ -445,11 +643,74 @@ Download .</description>
     </item>
     
     <item>
+      <title>Prusa Orange</title>
+      <link>https://open-filament.github.io/producers/prusament/pla/prusa-orange/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pla/prusa-orange/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Prusa Orange Transparent</title>
       <link>https://open-filament.github.io/producers/prusament/petg/prusa-orange-transparent/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://open-filament.github.io/producers/prusament/petg/prusa-orange-transparent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prusa Orange Transparent</title>
+      <link>https://open-filament.github.io/producers/prusament/pvb/prusa-orange-transparent/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pvb/prusa-orange-transparent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prusament PC Blend Carbon Fiber Black</title>
+      <link>https://open-filament.github.io/producers/prusament/pc/prusament-pc-blend-carbon-fiber-black/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pc/prusament-pc-blend-carbon-fiber-black/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prusament PC Blend Jet Black</title>
+      <link>https://open-filament.github.io/producers/prusament/pc/prusament-pc-blend-jet-black/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pc/prusament-pc-blend-jet-black/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prusament PC Blend Natural</title>
+      <link>https://open-filament.github.io/producers/prusament/pc/prusament-pc-blend-natural/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pc/prusament-pc-blend-natural/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prusament PC Blend Prusa Orange</title>
+      <link>https://open-filament.github.io/producers/prusament/pc/prusament-pc-blend-prusa-orange/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pc/prusament-pc-blend-prusa-orange/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prusament PC Blend Urban Grey</title>
+      <link>https://open-filament.github.io/producers/prusament/pc/prusament-pc-blend-urban-grey/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pc/prusament-pc-blend-urban-grey/</guid>
       <description></description>
     </item>
     
@@ -481,6 +742,24 @@ Download .</description>
     </item>
     
     <item>
+      <title>Simply Green</title>
+      <link>https://open-filament.github.io/producers/prusament/pla/simply-green/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pla/simply-green/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Smoky Black Transparent</title>
+      <link>https://open-filament.github.io/producers/prusament/pvb/smoky-black-transparent/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pvb/smoky-black-transparent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Terracotta Light</title>
       <link>https://open-filament.github.io/producers/prusament/petg/terracotta-light/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -504,6 +783,15 @@ Download .</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://open-filament.github.io/producers/prusament/petg/urban-grey/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vanilla White</title>
+      <link>https://open-filament.github.io/producers/prusament/pla/vanilla-white/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pla/vanilla-white/</guid>
       <description></description>
     </item>
     

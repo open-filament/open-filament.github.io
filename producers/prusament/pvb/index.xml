@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Prusament - PVB on Open-Filament</title>
+    <link>https://open-filament.github.io/producers/prusament/pvb/</link>
+    <description>Recent content in Prusament - PVB on Open-Filament</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://open-filament.github.io/producers/prusament/pvb/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bright Green Transparent</title>
+      <link>https://open-filament.github.io/producers/prusament/pvb/bright-green-transparent/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pvb/bright-green-transparent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dark Blue Transparent</title>
+      <link>https://open-filament.github.io/producers/prusament/pvb/dark-blue-transparent/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pvb/dark-blue-transparent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Light Yellow Transparent</title>
+      <link>https://open-filament.github.io/producers/prusament/pvb/light-yellow-transparent/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pvb/light-yellow-transparent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Natural Transparent</title>
+      <link>https://open-filament.github.io/producers/prusament/pvb/natural-transparent/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pvb/natural-transparent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prusa Orange Transparent</title>
+      <link>https://open-filament.github.io/producers/prusament/pvb/prusa-orange-transparent/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pvb/prusa-orange-transparent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Smoky Black Transparent</title>
+      <link>https://open-filament.github.io/producers/prusament/pvb/smoky-black-transparent/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://open-filament.github.io/producers/prusament/pvb/smoky-black-transparent/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
